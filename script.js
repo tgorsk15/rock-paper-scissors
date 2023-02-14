@@ -15,6 +15,7 @@ const playerSelection = prompt('Do you want to choose rock, paper,or scissors?',
 function playRound(playerSelection, computerSelection) {
     // make their choice case insenstive
     // make an else option at the end if user didn't put in any of the three possible answers
+    // IMPORTANT: changed all of the '=s' to '===' and it started correctly using the logic of the selections and round outcomes
     if (playerSelection === 'rock') {
         if (computerSelection === 'rock') {
             alert("It's a tie! You both picked Rock")
@@ -24,17 +25,17 @@ function playRound(playerSelection, computerSelection) {
             alert("You won! Rock beats Scissor!")
         }
     } else if (playerSelection === 'paper') {
-        if (computerSelection = 'rock') {
-            alert('You won! Paper beats Rock')
-        } else if (computerSelection = 'paper') {
+        if (computerSelection === 'paper') {
             alert("It's a tie! You both picked Paper")
+        } else if (computerSelection === 'rock') {
+            alert("You won! Paper beats Rock")
         } else {
             alert('You lost! Scissors beats paper')
         }
-    } else if (playerSelection = 'scissors') {
-        if (computerSelection = 'rock') {
+    } else if (playerSelection === 'scissors') {
+        if (computerSelection === 'rock') {
             alert('You lost! Rock beats Scissors')
-        } else if (computerSelection = 'scissors') {
+        } else if (computerSelection === 'scissors') {
             alert("It's a tie! You both picked Scissors")
         } else {
             alert('You won! Scissors beats paper')
@@ -43,11 +44,13 @@ function playRound(playerSelection, computerSelection) {
         alert('You did not give a valid answer. Try again')
     }
 }
-playRound(playerSelection, computerSelection)
+
 
         // write another function game(), that calls the playRound() function INSIDE of this that plays a 5 round game and keeps score and reports winner at the end
             // use loops!
             // use console.log() to display the results of each round AND the winner at the end
 function game() {
-    playRound()
+   // playRound(playerSelection, computerSelection)
 }
+
+game()
