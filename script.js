@@ -8,6 +8,8 @@ function getComputerChoice() {
 
 const computerSelection = getComputerChoice()
 const playerSelection = prompt('Do you want to choose rock, paper,or scissors?', '').toLowerCase();
+let playerScore = 0
+let computerScore = 0
         // function, playRound(), that plays a SINGLE ROUND of rock/p/s
             // two parameters: what the player selects and what the computer selects
             // return string that says who won (ex: 'Computer wins! Paper beats rock!')
@@ -50,7 +52,15 @@ function playRound(playerSelection, computerSelection) {
             // use loops!
             // use console.log() to display the results of each round AND the winner at the end
 function game() {
-   // playRound(playerSelection, computerSelection)
+    // setting up two different variables that keep track of each player's score
+    playRound(playerSelection, computerSelection)
+    // create a loop... that ends after 5 rounds
+    // IDEA: Only increment i IF either playerScore or computerScore increased... otherwise invoke playRound() again without adding an instance
+    // Maybe not... its only asking for 5 rounds
+    for (let i = 0; i < 5; i++) {
+        
+    }
+
 }
 
 game()
