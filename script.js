@@ -8,8 +8,7 @@ function getComputerChoice() {
 // trying to write a separate function whose sole purpose is to get the player's selection .... not working, deleted
 
 
-const playerSelection = prompt('Do you want to choose rock, paper,or scissors?', '').toLowerCase();
-const computerSelection = getComputerChoice()
+
 
 // setting up two different variables that keep track of each player's score
 let playerScore = 0
@@ -31,7 +30,7 @@ function playRound() {
             console.log("You lost! Paper beats Rock")
         } else {
             playerScore++
-            console.log("You won! Rock beats Scissor!")
+            console.log("You won! Rock beats Scissors!")
         }
     } else if (playerSelection === 'paper') {
         if (computerSelection === 'paper') {
@@ -58,25 +57,27 @@ function playRound() {
     }
 }
 
-playRound()
-console.log(computerScore)
-console.log(playerScore)
+
 
         // write another function game(), that calls the playRound() function INSIDE of this that plays a 5 round game and keeps score and reports winner at the end
             // use loops!
             // use console.log() to display the results of each round
-// function game() {
+
     // create a loop... that ends after 5 rounds
     // IDEA: Only increment i IF either playerScore or computerScore increased... otherwise invoke playRound() again without adding an instance
     // Maybe not... its only asking for 5 rounds
     // IDEA: use an if statement to check what the score is if i < 5, otherwise if i = 5, give the resultof the game
-    //function game(){
-        //for (let i = 0; i < 5; i++) {
-        //    if ()
-        //}
+    function game(){
+        for (let i = 0; i < 5; i++) {
+            computerSelection = getComputerChoice()
+            playerSelection = prompt('Do you want to choose rock, paper,or scissors?', '').toLowerCase()
+            playRound()
+        }
 
         // IDEA: write a separate IF statement AFTER the loop is ran through, which declares who the winner who is
-    //}
+    }
     
+game()
 
-// game()
+console.log(computerScore)
+console.log(playerScore)
