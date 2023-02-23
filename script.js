@@ -18,55 +18,65 @@ let computerScore = 0
             // two parameters: what the player selects and what the computer selects
             // return string that says who won (ex: 'Computer wins! Paper beats rock!')
             // *****PROBLEM: it is fading out my 'computerSelection' parameter, which was defined above
-function playRound(playerSelection, computerSelection) {
+function playRound() {
     
     // make their choice case insenstive
     // make an else option at the end if user didn't put in any of the three possible answers
     // IMPORTANT: changed all of the '=s' to '===' and it started correctly using the logic of the selections and round outcomes
     if (playerSelection === 'rock') {
         if (computerSelection === 'rock') {
-            alert("It's a tie! You both picked Rock")
-        } else if (rand === 'paper') {
-            alert("You lost! Paper beats Rock")
+            console.log("It's a tie! You both picked Rock")
+        } else if (computerSelection === 'paper') {
+            computerScore++
+            console.log("You lost! Paper beats Rock")
         } else {
-            alert("You won! Rock beats Scissor!")
+            playerScore++
+            console.log("You won! Rock beats Scissor!")
         }
     } else if (playerSelection === 'paper') {
         if (computerSelection === 'paper') {
-            alert("It's a tie! You both picked Paper")
+            console.log("It's a tie! You both picked Paper")
         } else if (computerSelection === 'rock') {
-            alert("You won! Paper beats Rock")
+            playerScore++
+            console.log("You won! Paper beats Rock")
         } else {
-            alert('You lost! Scissors beats paper')
+            computerScore++
+            console.log('You lost! Scissors beats paper')
         }
     } else if (playerSelection === 'scissors') {
         if (computerSelection === 'rock') {
-            alert('You lost! Rock beats Scissors')
+            computerScore++
+            console.log('You lost! Rock beats Scissors')
         } else if (computerSelection === 'scissors') {
-            alert("It's a tie! You both picked Scissors")
+            console.log("It's a tie! You both picked Scissors")
         } else {
-            alert('You won! Scissors beats paper')
+            playerScore++
+            console.log('You won! Scissors beats paper')
         }
     } else {
-        alert('You did not give a valid answer. Try again')
+        console.log('You did not give a valid answer. Try again')
     }
 }
 
-
-
 playRound()
+console.log(computerScore)
+console.log(playerScore)
 
         // write another function game(), that calls the playRound() function INSIDE of this that plays a 5 round game and keeps score and reports winner at the end
             // use loops!
-            // use console.log() to display the results of each round AND the winner at the end
+            // use console.log() to display the results of each round
 // function game() {
     // create a loop... that ends after 5 rounds
     // IDEA: Only increment i IF either playerScore or computerScore increased... otherwise invoke playRound() again without adding an instance
     // Maybe not... its only asking for 5 rounds
     // IDEA: use an if statement to check what the score is if i < 5, otherwise if i = 5, give the resultof the game
-  //  for (let i = 0; i < 5; i++) {
-//    }
+    //function game(){
+        //for (let i = 0; i < 5; i++) {
+        //    if ()
+        //}
 
-// }
+        // IDEA: write a separate IF statement AFTER the loop is ran through, which declares who the winner who is
+    //}
+    
 
 // game()
