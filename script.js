@@ -13,12 +13,12 @@ function getComputerChoice() {
 // setting up two different variables that keep track of each player's score
 let playerScore = 0
 let computerScore = 0
+
         // function, playRound(), that plays a SINGLE ROUND of rock/p/s
             // two parameters: what the player selects and what the computer selects
             // return string that says who won (ex: 'Computer wins! Paper beats rock!')
             // *****PROBLEM: it is fading out my 'computerSelection' parameter, which was defined above
 function playRound() {
-    
     // make their choice case insenstive
     // make an else option at the end if user didn't put in any of the three possible answers
     // IMPORTANT: changed all of the '=s' to '===' and it started correctly using the logic of the selections and round outcomes
@@ -72,9 +72,17 @@ function playRound() {
             computerSelection = getComputerChoice()
             playerSelection = prompt('Do you want to choose rock, paper,or scissors?', '').toLowerCase()
             playRound()
+            console.log(`Your score is ${playerScore} and the computer's score is ${computerScore}`)
         }
 
         // IDEA: write a separate IF statement AFTER the loop is ran through, which declares who the winner who is
+        if (computerScore > playerScore) {
+            console.log("You lost the game. Better luck next time!")
+        } else if (playerScore > computerScore) {
+            console.log("You won the game! Good job!")
+        } else {
+            console.log("You tied with the computer!")
+        }
     }
     
 game()
