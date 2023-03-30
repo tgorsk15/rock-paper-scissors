@@ -1,5 +1,9 @@
+const body = document.querySelector('body');
+body.style.backgroundColor = 'purple';
+
 // create a function (getComputerChoice) that randomly generates rock, paper or scissors
         // Note: use the console to mak sure this function is working correctly
+
 const gameOutcomes = ['rock', 'scissors', 'paper'];
 function getComputerChoice() {
     return gameOutcomes[Math.floor(Math.random() * gameOutcomes.length)];
@@ -68,7 +72,7 @@ function playRound() {
     // Maybe not... its only asking for 5 rounds
     // IDEA: use an if statement to check what the score is if i < 5, otherwise if i = 5, give the resultof the game
     function game(){
-        for (let i = 0; i < 5; i++) {
+        // for (let i = 0; i < 5; i++) {
             computerSelection = getComputerChoice()
             playerSelection = prompt('Do you want to choose rock, paper,or scissors?', '').toLowerCase()
             playRound()
@@ -83,9 +87,9 @@ function playRound() {
         } else {
             console.log("You tied with the computer!")
         }
-    }
+    //}
     
-game()
+
 
 console.log(computerScore)
 console.log(playerScore)
