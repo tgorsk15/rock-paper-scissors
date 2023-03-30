@@ -11,7 +11,15 @@ function getComputerChoice() {
 
 // trying to write a separate function whose sole purpose is to get the player's selection .... not working, deleted
 
-
+// addevent Listeners for player buttons
+const rock = document.querySelector('.rock');
+rock.addEventListener('click', () => {
+    playerSelection = 'rock';
+    // added the computerSelection directly into the event... takes away the need to have the getComputerChoice() function?
+    computerSelection = gameOutcomes[Math.floor(Math.random() * gameOutcomes.length)]
+    //getComputerChoice()
+    playRound();
+});
 
 
 // setting up two different variables that keep track of each player's score
@@ -73,20 +81,24 @@ function playRound() {
     // IDEA: use an if statement to check what the score is if i < 5, otherwise if i = 5, give the resultof the game
     function game(){
         // for (let i = 0; i < 5; i++) {
-            computerSelection = getComputerChoice()
-            playerSelection = prompt('Do you want to choose rock, paper,or scissors?', '').toLowerCase()
+            // computerSelection = getComputerChoice()
+            // want to alter playerSelection so it matches whatever button was pressed
+            // IDEA: could create 3 separate functions that correlate with the different buttons to return the right string
+            // OR i could create an event listener that comes with a function attached to it, and goes through a conditional statement
+
+            // playerSelection = prompt('Do you want to choose rock, paper,or scissors?', '').toLowerCase()
             playRound()
             console.log(`Your score is ${playerScore} and the computer's score is ${computerScore}`)
         }
 
         // IDEA: write a separate IF statement AFTER the loop is ran through, which declares who the winner who is
-        if (computerScore > playerScore) {
-            console.log("You lost the game. Better luck next time!")
-        } else if (playerScore > computerScore) {
-            console.log("You won the game! Good job!")
-        } else {
-            console.log("You tied with the computer!")
-        }
+        // if (computerScore > playerScore) {
+        //     console.log("You lost the game. Better luck next time!")
+        // } else if (playerScore > computerScore) {
+        //     console.log("You won the game! Good job!")
+        // } else {
+        //     console.log("You tied with the computer!")
+        // }
     //}
     
 
