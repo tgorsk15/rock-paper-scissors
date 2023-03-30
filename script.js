@@ -38,6 +38,10 @@ scissors.addEventListener('click', () => {
 });
 
 
+// reference to results-box container
+const boxScore = document.querySelector('.results-box')
+
+
 // setting up two different variables that keep track of each player's score
 let playerScore = 0
 let computerScore = 0
@@ -52,36 +56,36 @@ function playRound() {
     // IMPORTANT: changed all of the '=s' to '===' and it started correctly using the logic of the selections and round outcomes
     if (playerSelection === 'rock') {
         if (computerSelection === 'rock') {
-            console.log("It's a tie! You both picked Rock")
+            boxScore.textContent = "It's a tie! You both picked Rock"
         } else if (computerSelection === 'paper') {
             computerScore++
-            console.log("You lost! Paper beats Rock")
+            boxScore.textContent = "You lost! Paper beats Rock"
         } else {
             playerScore++
-            console.log("You won! Rock beats Scissors!")
+            boxScore.textContent = "You won! Rock beats Scissors!"
         }
     } else if (playerSelection === 'paper') {
         if (computerSelection === 'paper') {
-            console.log("It's a tie! You both picked Paper")
+            boxScore.textContent = "It's a tie! You both picked Paper"
         } else if (computerSelection === 'rock') {
             playerScore++
-            console.log("You won! Paper beats Rock")
+            boxScore.textContent = "You won! Paper beats Rock"
         } else {
             computerScore++
-            console.log('You lost! Scissors beats paper')
+            boxScore.textContent = 'You lost! Scissors beats paper'
         }
     } else if (playerSelection === 'scissors') {
         if (computerSelection === 'rock') {
             computerScore++
-            console.log('You lost! Rock beats Scissors')
+            boxScore.textContent = 'You lost! Rock beats Scissors'
         } else if (computerSelection === 'scissors') {
-            console.log("It's a tie! You both picked Scissors")
+            boxScore.textContent = "It's a tie! You both picked Scissors"
         } else {
             playerScore++
-            console.log('You won! Scissors beats paper')
+            boxScore.textContent = 'You won! Scissors beats paper'
         }
     } else {
-        console.log('You did not give a valid answer. Try again')
+        boxScore.textContent = 'You did not give a valid answer. Try again'
     }
 }
 
