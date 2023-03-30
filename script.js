@@ -12,12 +12,28 @@ function getComputerChoice() {
 // trying to write a separate function whose sole purpose is to get the player's selection .... not working, deleted
 
 // addevent Listeners for player buttons
+// Rock button
 const rock = document.querySelector('.rock');
 rock.addEventListener('click', () => {
     playerSelection = 'rock';
     // added the computerSelection directly into the event... takes away the need to have the getComputerChoice() function?
     computerSelection = gameOutcomes[Math.floor(Math.random() * gameOutcomes.length)]
-    //getComputerChoice()
+    playRound();
+});
+
+// Paper button
+const paper = document.querySelector('.paper');
+paper.addEventListener('click', () => {
+    playerSelection = 'paper';
+    computerSelection = gameOutcomes[Math.floor(Math.random() * gameOutcomes.length)]
+    playRound();
+});
+
+// Scissors button
+const scissors = document.querySelector('.scissors');
+scissors.addEventListener('click', () => {
+    playerSelection = 'scissors';
+    computerSelection = gameOutcomes[Math.floor(Math.random() * gameOutcomes.length)]
     playRound();
 });
 
@@ -72,7 +88,6 @@ function playRound() {
 
 
         // write another function game(), that calls the playRound() function INSIDE of this that plays a 5 round game and keeps score and reports winner at the end
-            // use loops!
             // use console.log() to display the results of each round
 
     // create a loop... that ends after 5 rounds
@@ -85,7 +100,7 @@ function playRound() {
             // want to alter playerSelection so it matches whatever button was pressed
             // IDEA: could create 3 separate functions that correlate with the different buttons to return the right string
             // OR i could create an event listener that comes with a function attached to it, and goes through a conditional statement
-
+            // eneded up creating three event listeners for each button, that each came with a function
             // playerSelection = prompt('Do you want to choose rock, paper,or scissors?', '').toLowerCase()
             playRound()
             console.log(`Your score is ${playerScore} and the computer's score is ${computerScore}`)
