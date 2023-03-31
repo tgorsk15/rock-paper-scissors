@@ -41,6 +41,9 @@ scissors.addEventListener('click', () => {
 // reference to results-box container
 const boxScore = document.querySelector('.results-box')
 
+// reference to scoreboard
+const scoreboard = document.querySelector('.scoreboard')
+
 
 // setting up two different variables that keep track of each player's score
 let playerScore = 0
@@ -86,7 +89,8 @@ function playRound() {
         }
     } else {
         boxScore.textContent = 'You did not give a valid answer. Try again'
-    }
+    };
+    scoreboard.textContent = `Computer: ${computerScore}   You: ${playerScore}`
 }
 
 
