@@ -9,7 +9,25 @@ function getComputerChoice() {
     return gameOutcomes[Math.floor(Math.random() * gameOutcomes.length)];
 }
 
-// trying to write a separate function whose sole purpose is to get the player's selection .... not working, deleted
+// Check() function to see if game has ended
+function check() {
+    if (playerScore === 5) {
+        scoreboard.textContent = "You won the game! Good job!";
+        disableButton();
+    } else if (computerScore === 5) {
+        scoreboard.textContent = "You lost the game. Better luck next time!";
+        disableButton();
+    }
+}
+
+// disableGame() function to disable buttons and reset game
+function disableButton() {
+    rock.disabled = true;
+    paper.disabled = true;
+    scissors.disabled = true;
+}
+
+
 
 // addevent Listeners for player buttons
 // Rock button
@@ -90,7 +108,9 @@ function playRound() {
     } else {
         boxScore.textContent = 'You did not give a valid answer. Try again'
     };
-    scoreboard.textContent = `Computer: ${computerScore}   You: ${playerScore}`
+    scoreboard.textContent = `Computer: ${computerScore}   You: ${playerScore}`;
+
+    check();
 }
 
 
@@ -98,21 +118,28 @@ function playRound() {
         // write another function game(), that calls the playRound() function INSIDE of this that plays a 5 round game and keeps score and reports winner at the end
             // use console.log() to display the results of each round
 
-    // create a loop... that ends after 5 rounds
-    // IDEA: Only increment i IF either playerScore or computerScore increased... otherwise invoke playRound() again without adding an instance
-    // Maybe not... its only asking for 5 rounds
-    // IDEA: use an if statement to check what the score is if i < 5, otherwise if i = 5, give the resultof the game
     function game(){
-        // for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < 10; i++) {
             // computerSelection = getComputerChoice()
-            // want to alter playerSelection so it matches whatever button was pressed
             // IDEA: could create 3 separate functions that correlate with the different buttons to return the right string
             // OR i could create an event listener that comes with a function attached to it, and goes through a conditional statement
             // eneded up creating three event listeners for each button, that each came with a function
-            // playerSelection = prompt('Do you want to choose rock, paper,or scissors?', '').toLowerCase()
-            playRound()
-            console.log(`Your score is ${playerScore} and the computer's score is ${computerScore}`)
+            // NEW: trying to use a WHILE loop instead of a FOR loop to be able to end the game at 5 points for either side
+            
+            
+            //do {
+            playRound();
+
+            // console.log(`Your score is ${playerScore} and the computer's score is ${computerScore}`)
+            //} while (playerScore < 5 && computerScore < 5);
         }
+        if (playerScore === 5) {
+            scoreboard.textContent = "You won the game! Good job!";
+        } else if (computerScore === 5) {
+            scoreboard.textContent = "You lost the game. Better luck next time!";
+        }
+        
+    }
 
         // IDEA: write a separate IF statement AFTER the loop is ran through, which declares who the winner who is
         // if (computerScore > playerScore) {
@@ -125,6 +152,3 @@ function playRound() {
     //}
     
 
-
-console.log(computerScore)
-console.log(playerScore)
