@@ -20,11 +20,21 @@ function check() {
     }
 }
 
-// disableGame() function to disable buttons and reset game
+
+// resetGame function
+function resetGame() {
+    const reset = document.createElement('button')
+    reset.classList.add('reset-button')
+    reset.textContent = 'Play again?'
+    scoreboard.appendChild(reset)
+}
+
+// disableGame() function to disable buttons after end has been reached
 function disableButton() {
     rock.disabled = true;
     paper.disabled = true;
     scissors.disabled = true;
+    resetGame()
 }
 
 
@@ -69,8 +79,8 @@ let computerScore = 0
 
         // function, playRound(), that plays a SINGLE ROUND of rock/p/s
             // two parameters: what the player selects and what the computer selects
-            // return string that says who won (ex: 'Computer wins! Paper beats rock!')
-            // *****PROBLEM: it is fading out my 'computerSelection' parameter, which was defined above
+            
+            
 function playRound() {
     // make their choice case insenstive
     // make an else option at the end if user didn't put in any of the three possible answers
