@@ -28,11 +28,7 @@ function check() {
 
 // resetGame function
 function resetButton() {
-    const reset = document.createElement('button');
-    reset.classList.add('reset-button', 'refresh');
-    reset.textContent = 'Play again';
-    reset.style.margin = '20px'
-    scoreboard.appendChild(reset);
+    // const reset = document.createElement('button');
 
     // reset.addEventListener('click', () => {
     // reset.remove();
@@ -82,6 +78,7 @@ scissors.addEventListener('click', () => {
 });
 
 // Reset button event listener... resets scores and triggers new game
+const reset = document.querySelector('.reset-button')
 
 
 

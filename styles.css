@@ -1,6 +1,9 @@
-.reset {
-    display: flex;
-    margin: 40px;
+.reset-board {
+    margin-top: 20px;
+}
+
+#reset-button {
+    padding: 15px;
 }
 
 .title {
