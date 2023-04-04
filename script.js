@@ -28,6 +28,7 @@ function check() {
 
 // resetGame function
 function resetButton() {
+    reset.style.visibility = 'visible'
     // const reset = document.createElement('button');
 
     // reset.addEventListener('click', () => {
@@ -78,8 +79,8 @@ scissors.addEventListener('click', () => {
 });
 
 // Reset button event listener... resets scores and triggers new game
-const reset = document.querySelector('.reset-button')
-
+const reset = document.querySelector('#reset-button');
+reset.style.visibility = 'hidden';
 
 
 // reference to results-box container
