@@ -1,6 +1,11 @@
 const body = document.querySelector('body');
 body.style.backgroundColor = 'purple';
 
+// setting up two different variables that keep track of each player's score
+let playerScore = 0
+let computerScore = 0
+
+
 // create a function (getComputerChoice) that randomly generates rock, paper or scissors
         // Note: use the console to mak sure this function is working correctly
 
@@ -22,11 +27,22 @@ function check() {
 
 
 // resetGame function
-function resetGame() {
-    const reset = document.createElement('button')
-    reset.classList.add('reset-button')
-    reset.textContent = 'Play again?'
-    scoreboard.appendChild(reset)
+function resetButton() {
+    const reset = document.createElement('button');
+    reset.classList.add('reset-button', 'refresh');
+    reset.textContent = 'Play again';
+    reset.style.margin = '20px'
+    scoreboard.appendChild(reset);
+
+    // reset.addEventListener('click', () => {
+    // reset.remove();
+    // playerScore === 0;
+    // computerScore === 0;
+    // rock.disabled = false;
+    // paper.disabled = false;
+    // scissors.disabled = false;
+    // scoreboard.textContent = ''
+// })
 }
 
 // disableGame() function to disable buttons after end has been reached
@@ -34,7 +50,7 @@ function disableButton() {
     rock.disabled = true;
     paper.disabled = true;
     scissors.disabled = true;
-    resetGame()
+    resetButton()
 }
 
 
@@ -65,6 +81,9 @@ scissors.addEventListener('click', () => {
     playRound();
 });
 
+// Reset button event listener... resets scores and triggers new game
+
+
 
 // reference to results-box container
 const boxScore = document.querySelector('.results-box')
@@ -73,9 +92,6 @@ const boxScore = document.querySelector('.results-box')
 const scoreboard = document.querySelector('.scoreboard')
 
 
-// setting up two different variables that keep track of each player's score
-let playerScore = 0
-let computerScore = 0
 
         // function, playRound(), that plays a SINGLE ROUND of rock/p/s
             // two parameters: what the player selects and what the computer selects

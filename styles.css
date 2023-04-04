@@ -1,0 +1,10 @@
+.reset {
+    display: flex;
+    margin: 40px;
+}
+
+.title {
+    font-size: 55px;
+    color: orange;
+    margin-bottom: 50px;
+}
